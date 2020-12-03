@@ -1,0 +1,16 @@
+.navbar {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px !important;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar--brand {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #222;
+  transition: all 0.2s;
+}
+.navbar-brand {
+  opacity: 0.8;
+}

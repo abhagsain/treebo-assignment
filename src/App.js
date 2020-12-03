@@ -1,11 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Layout from "./components/Layout";
 import "./App.css";
-import Home from "./pages/Home";
-import HotelDetails from "./pages/HotelDetails";
-const Layout = ({ children }) => {
-  return <Fragment>{children}</Fragment>;
-};
+import Home from "./pages/home";
+import HotelDetails from "./pages/hotel-details";
 
 function App() {
   return (
