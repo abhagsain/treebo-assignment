@@ -2,6 +2,9 @@
 
 ### 👉 [Live Demo](https://treebo.vercel.app/)
 
+
+![Demo](https://user-images.githubusercontent.com/36589645/101138469-3af1ef80-3636-11eb-8a0e-fec7c5247997.png)
+
 #### Installation
 
 ```
