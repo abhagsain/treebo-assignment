@@ -21,41 +21,54 @@ export default function Home() {
     return <div> Sorry there was an error</div>;
   }
   return (
-    <div className="card-list">
-      {data.map((hotel) => {
-        const prices = Object.values(hotel.price);
-        let minPrice = 0;
-        let hasSoldOut = prices.every((price) => price === null);
-        if (!hasSoldOut) {
-          minPrice = Math.min(...prices.filter((el) => el !== null));
-        }
-        return (
-          <Card key={hotel.id}>
-            <Link to={`/${hotel.id}/details`}>
-              <CardMedia
-                title={hotel.name}
-                className="card-image"
-                src={imagePlaceholder}
-              />
-            </Link>
-            <CardContent>
-              <div className="flex items-end justify-between">
-                <div>
-                  <Heading className="mb-2">{hotel.name}</Heading>
+    <>
+      <div className="card-list">
+        {data.map((hotel) => {
+          const prices = Object.values(hotel.price);
+          let minPrice = 0;
+          let hasSoldOut = prices.every((price) => price === null);
+          if (!hasSoldOut) {
+            minPrice = Math.min(...prices.filter((el) => el !== null));
+          }
+          return (
+            <Card key={hotel.id}>
+              <Link to={`/${hotel.id}/details`}>
+                <CardMedia
+                  title={hotel.name}
+                  className="card-image"
+                  src={imagePlaceholder}
+                />
+              </Link>
+              <CardContent>
+                <div className="flex items-end justify-between">
+                  <div>
+                    <Link to={`/${hotel.id}/details`}>
+                      <Heading variant="lg">{hotel.name}</Heading>
+                    </Link>
+                    <p>
+                      {hotel.locality}
+                      {` `} {hotel.city}
+                    </p>
+                  </div>
                   <p>
-                    {hotel.locality}
-                    {` `} {hotel.city}
+                    {hasSoldOut ? (
+                      "Sold out"
+                    ) : (
+                      <span className="font-semibold">₹{minPrice}</span>
+                    )}
                   </p>
                 </div>
-                <p>{hasSoldOut ? "Sold out" : `₹${minPrice}/night`}</p>
-              </div>
-              <Button onClick={() => history.push(`/${hotel.id}/details`)}>
+                {/* <Button
+                className="w-full mt-2 cursor-pointer"
+                onClick={() => history.push(`/${hotel.id}/details`)}
+              >
                 Take a look
-              </Button>
-            </CardContent>
-          </Card>
-        );
-      })}
-    </div>
+              </Button> */}
+              </CardContent>
+            </Card>
+          );
+        })}
+      </div>
+    </>
   );
 }

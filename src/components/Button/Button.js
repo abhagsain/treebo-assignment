@@ -1,8 +1,9 @@
 import React from "react";
 import "./button.css";
-export default function Button({ onClick, children }) {
+import cx from "classnames";
+export default function Button({ onClick, children, className }) {
   return (
-    <button className="w-full cursor-pointer button" onClick={onClick}>
+    <button className={cx("button", className)} onClick={onClick}>
       {children}
     </button>
   );
