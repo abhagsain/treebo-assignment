@@ -96,3 +96,18 @@ table {
 .cursor-pointer {
   cursor: pointer;
 }
+.mb-16 {
+  margin-bottom: 4rem;
+}
+.w-full {
+  width: 100%;
+}
+.flex {
+  display: flex;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.items-end {
+  align-items: flex-end;
+}
