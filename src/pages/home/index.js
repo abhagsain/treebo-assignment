@@ -53,12 +53,6 @@ export default function Home() {
                     )}
                   </p>
                 </div>
-                {/* <Button
-                className="w-full mt-2 cursor-pointer"
-                onClick={() => history.push(`/${hotel.id}/details`)}
-              >
-                Take a look
-              </Button> */}
               </CardContent>
             </Card>
           );
