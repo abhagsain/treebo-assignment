@@ -27,7 +27,6 @@ export async function getHotelDetails(hotelId) {
             ...detailWithPrice,
           };
         }
-        console.log("🚀 ~ file: utils.js ~ line 23 ~ .then ~ details", details);
         resolve(detailWithPrice);
       })
       .catch((err) => {
