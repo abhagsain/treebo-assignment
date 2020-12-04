@@ -58,7 +58,7 @@ export default function HotelDetails({ match: { params } }) {
                 </Heading>
                 <div className="flex justify-between mt-2">
                   {value.map((essentialItem) => (
-                    <div>{essentialItem}</div>
+                    <div key={essentialItem}>{essentialItem}</div>
                   ))}
                 </div>
               </div>

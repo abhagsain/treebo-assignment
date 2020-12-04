@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
+import imagePlaceholder from "../../assests/img-placeholder.png";
 import { Card, CardContent, CardMedia } from "../../components/Card";
 import Heading from "../../components/Heading/Heading";
 import { getHomepageHotels } from "../../utils";
-import imagePlaceholder from "../../assests/img-placeholder.png";
 import "./home.css";
 export default function Home() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
-  const history = useHistory();
   useEffect(() => {
     getHomepageHotels()
       .then((result) => {
