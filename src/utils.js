@@ -6,7 +6,7 @@ export function api(url) {
     return response.json();
   });
 }
-const BASE_URL = "http://www.mocky.io/v2";
+const BASE_URL = "https://www.mocky.io/v2";
 export async function getHotelDetails(hotelId) {
   return new Promise((resolve, reject) => {
     const hotelPrices = api(`${BASE_URL}/5a7f24f02e00005200b56875`);
