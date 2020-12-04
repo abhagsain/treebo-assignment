@@ -19,7 +19,7 @@ export default function HotelDetails({ match: { params } }) {
           <Heading variant="xl" className="mb-2 font-semibold ">
             Type
           </Heading>
-          <div className="flex justify-between">
+          <div className="flex justify-between wrap">
             {Object.entries(price).map(([key, value]) => {
               return (
                 <div key={key}>
@@ -45,11 +45,14 @@ export default function HotelDetails({ match: { params } }) {
         <div className="details-section">
           {Object.entries(hotelDetail).map(([key, value]) => {
             return (
-              <div className="flex justify-between mt-4 flex-column" key={key}>
+              <div
+                className="flex justify-between mt-4 flex-column wrap"
+                key={key}
+              >
                 <Heading variant="xl" className="mb-2 font-semibold capitalize">
                   {key}
                 </Heading>
-                <div className="flex justify-between mt-2">
+                <div className="flex justify-between mt-2 wrap">
                   {value.map((essentialItem) => (
                     <div key={essentialItem}>{essentialItem}</div>
                   ))}
