@@ -41,7 +41,7 @@ export default function Home() {
             <CardContent>
               <div className="flex items-end justify-between">
                 <div>
-                  <Heading>{hotel.name}</Heading>
+                  <Heading className="mb-2">{hotel.name}</Heading>
                   <p>
                     {hotel.locality}
                     {` `} {hotel.city}

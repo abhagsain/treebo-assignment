@@ -81,15 +81,6 @@ table {
     padding: 0;
   }
 }
-.button {
-  padding: 1rem 0;
-  border-radius: 8px;
-  transition: opacity 0.2s;
-  background: white;
-}
-.button:hover {
-  opacity: 0.8;
-}
 .text-bold {
   font-weight: bold;
 }
@@ -110,4 +101,28 @@ table {
 }
 .items-end {
   align-items: flex-end;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mt-2 {
+  margin-bottom: 0.5rem;
+}
+.ml-2 {
+  margin-bottom: 0.5rem;
+}
+.mr-2 {
+  margin-bottom: 0.5rem;
+}
+.mt-4 {
+  margin-bottom: 1rem;
+}
+.mr-4 {
+  margin-bottom: 1rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.ml-4 {
+  margin-bottom: 1rem;
 }
