@@ -4,10 +4,14 @@ import imagePlaceholder from "../../assests/img-placeholder.png";
 import { Card, CardContent, CardMedia } from "../../components/Card";
 import Heading from "../../components/Heading/Heading";
 import "./home.css";
+import HomeSkeleton from "./HomeSkeleton";
 import useHotelList from "../../hooks/useHotelList";
 
 export default function Home() {
   const { data, error } = useHotelList();
+  if (!data.length) {
+    return <HomeSkeleton />;
+  }
   if (error) {
     return <div> Sorry there was an error</div>;
   }

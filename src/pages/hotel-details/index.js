@@ -1,11 +1,12 @@
 import React from "react";
 import Heading from "../../components/Heading/Heading";
 import useHotelDetails from "../../hooks/useHotelDetails";
+import DetailSkeleton from "./DetailSkeleton";
 import "./hotel-details.css";
 
 export default function HotelDetails({ match: { params } }) {
   const { details, error } = useHotelDetails(params.id);
-  if (!details) return <div>Loading</div>;
+  if (!details) return <DetailSkeleton />;
   if (error) return <div>There's an error! Please refresh the page</div>;
   const { details: hotelDetail, price } = details;
   const Price = ({ children }) => {

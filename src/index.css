@@ -169,13 +169,22 @@ table {
     #f6f7f8 100%
   );
   background-repeat: no-repeat;
-  background-size: 800px 104px;
+  background-size: 800px 100%;
   display: inline-block;
   position: relative;
+  animation: placeholderShimmer 1s ease-in infinite forwards;
+}
+.lines {
+  height: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
 
-  -webkit-animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-name: placeholderShimmer;
-  -webkit-animation-timing-function: linear;
+  100% {
+    background-position: 468px 0;
+  }
 }
