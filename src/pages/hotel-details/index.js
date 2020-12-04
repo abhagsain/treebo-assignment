@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Heading from "../../components/Heading/Heading";
-import { getHotelDetails } from "../../utils";
+import useHotelDetails from "../../hooks/useHotelDetails";
 import "./hotel-details.css";
+
 export default function HotelDetails({ match: { params } }) {
-  const [details, setDetails] = useState();
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    getHotelDetails(params.id)
-      .then((res) => {
-        setDetails(res);
-      })
-      .catch((err) => setError(err));
-    return () => {};
-  }, [params.id]);
+  const { details, error } = useHotelDetails(params.id);
   if (!details) return <div>Loading</div>;
   if (error) return <div>There's an error! Please refresh the page</div>;
   const { details: hotelDetail, price } = details;

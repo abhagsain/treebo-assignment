@@ -1,20 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import imagePlaceholder from "../../assests/img-placeholder.png";
 import { Card, CardContent, CardMedia } from "../../components/Card";
 import Heading from "../../components/Heading/Heading";
-import { getHomepageHotels } from "../../utils";
 import "./home.css";
+import useHotelList from "../../hooks/useHotelList";
+
 export default function Home() {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    getHomepageHotels()
-      .then((result) => {
-        setData(result);
-      })
-      .catch((err) => setError(err));
-  }, []);
+  const { data, error } = useHotelList();
   if (error) {
     return <div> Sorry there was an error</div>;
   }
